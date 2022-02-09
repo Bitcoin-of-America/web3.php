@@ -28,16 +28,34 @@ class RequestManager
     protected $timeout;
     
     /**
+     * auth username
+     *
+     * @var float
+     */
+    protected $authu;
+
+    /**
+     * auth password
+     *
+     * @var float
+     */
+    protected $authp;
+
+    /**
      * construct
      * 
      * @param string $host
      * @param float $timeout
+     * @param string $authu
+     * @param string $authp
      * @return void
      */
-    public function __construct($host, $timeout=1)
+    public function __construct($host, $timeout=1, $authu = NULL, $authp = NULL)
     {
         $this->host = $host;
         $this->timeout = (float) $timeout;
+        $this->authu = $authu;
+        $this->authp = $authp;
     }
 
     /**
